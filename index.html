@@ -1,0 +1,533 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tlalli Tech · Consultoría tecnológica, automatización y ERP</title>
+  <meta name="description" content="Consultoría tecnológica para empresas: diagnóstico de procesos, automatización, implementación de ERP y sistemas a la medida. Zumpango, Estado de México.">
+  <meta property="og:title" content="Tlalli Tech · Consultoría tecnológica, automatización y ERP">
+  <meta property="og:description" content="Resolvemos los problemas de tu operación con tecnología. Agenda tu diagnóstico.">
+  <meta property="og:image" content="img/logo-completo.png">
+  <link rel="icon" type="image/png" href="img/logo-icono.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=DM+Sans:wght@500;700&display=swap">
+  <style>
+    :root {
+      --primario: #6E2F1A;
+      --oxido: #A84B22;
+      --acento: #E9C46A;
+      --cafe: #3B2418;
+      --texto: #2A1A12;
+      --texto-2: #4A3A30;
+      --texto-3: #6B5545;
+      --fondo: #FBF7F0;
+      --arena: #F3E4D3;
+      --linea: #E6D8C6;
+      --crema: #F6EADF;
+      --titulos: 'DM Sans', Inter, Arial, sans-serif;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 80px; }
+    body {
+      margin: 0;
+      font-family: Inter, 'Helvetica Neue', Arial, sans-serif;
+      color: var(--texto);
+      background: var(--fondo);
+      line-height: 1.5;
+    }
+    img { max-width: 100%; }
+    a { color: var(--primario); }
+    a:hover { color: var(--cafe); }
+    :focus-visible { outline: 3px solid var(--acento); outline-offset: 3px; }
+    h1, h2, h3 { font-family: var(--titulos); margin: 0; font-weight: 700; }
+    p { margin: 0; }
+
+    .contenedor { max-width: 1160px; margin: 0 auto; }
+    .seccion { padding: 96px 24px; }
+    .seccion--arena { background: var(--arena); }
+    .etiqueta { font-size: 13px; font-weight: 700; letter-spacing: .14em; color: var(--oxido); text-transform: uppercase; }
+    .titulo-seccion { font-size: clamp(30px, 4vw, 40px); line-height: 1.1; letter-spacing: -.01em; text-wrap: balance; }
+    .encabezado { display: flex; flex-direction: column; gap: 14px; max-width: 680px; margin-bottom: 40px; }
+    .encabezado p { font-size: 17px; color: var(--texto-2); }
+
+    /* Botones */
+    .btn {
+      display: inline-flex; align-items: center; gap: 10px;
+      padding: 15px 24px; border-radius: 999px;
+      font-size: 16px; font-weight: 600; text-decoration: none;
+    }
+    .btn--primario { background: var(--primario); color: #fff; }
+    .btn--primario:hover { background: var(--cafe); color: #fff; }
+    .btn--borde { border: 1.5px solid #CDB59C; color: var(--texto); padding: 14px 22px; }
+    .btn--borde:hover { background: var(--arena); color: var(--texto); }
+    .btn--acento { background: var(--acento); color: var(--texto); font-weight: 700; }
+    .btn--acento:hover { background: #F0D48C; color: var(--texto); }
+
+    /* Menú */
+    .menu { position: sticky; top: 0; z-index: 10; background: var(--fondo); border-bottom: 1px solid var(--linea); }
+    .menu .contenedor {
+      padding: 14px 24px; display: flex; flex-wrap: wrap;
+      align-items: center; justify-content: space-between; gap: 12px 24px;
+    }
+    .marca { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+    .marca img { width: 40px; height: 40px; display: block; }
+    .marca span { font-family: var(--titulos); font-size: 22px; letter-spacing: -.01em; }
+    .marca b { font-weight: 700; color: var(--cafe); }
+    .marca i { font-style: normal; font-weight: 500; color: var(--oxido); }
+    .menu nav { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 22px; font-size: 15px; font-weight: 500; }
+    .menu nav a:not(.btn) { color: var(--texto); text-decoration: none; padding: 10px 0; }
+    .menu nav a:not(.btn):hover { color: var(--oxido); }
+    .menu .btn { padding: 11px 18px; font-size: 15px; }
+
+    /* Portada */
+    .portada { padding: 80px 24px 96px; }
+    .portada .contenedor { display: flex; flex-wrap: wrap; align-items: center; gap: 56px; }
+    .portada__texto { flex: 1 1 460px; min-width: 0; display: flex; flex-direction: column; gap: 22px; }
+    .portada h1 { font-size: clamp(40px, 6vw, 58px); line-height: 1.03; letter-spacing: -.02em; text-wrap: balance; }
+    .portada__texto > p { font-size: 19px; line-height: 1.55; color: var(--texto-2); max-width: 540px; }
+    .botones { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 6px; }
+
+    .flujo {
+      flex: 1 1 420px; min-width: 0; background: #fff; border: 1px solid var(--linea);
+      border-radius: 24px; padding: 28px; display: flex; flex-direction: column; gap: 10px;
+    }
+    .flujo__titulo { margin-bottom: 8px; font-size: 13px; font-weight: 700; letter-spacing: .12em; color: var(--texto-3); text-transform: uppercase; }
+    .franja { border-radius: 10px; padding: 13px 18px; font-size: 15px; font-weight: 600; }
+    .franja--1 { align-self: flex-start; width: 62%; background: #E9C46A; color: var(--texto); }
+    .franja--2 { align-self: flex-start; width: 78%; background: #D98E4A; color: var(--texto); }
+    .franja--3 { align-self: flex-end;   width: 86%; background: #C96C34; color: #1E120C; }
+    .franja--4 { align-self: stretch;                background: #A84B22; color: #fff; }
+    .franja--5 { align-self: flex-start; width: 70%; background: #6E2F1A; color: #fff; }
+    .franja--6 { align-self: center;     width: 80%; background: #3B2418; color: #fff; text-align: center; }
+    .flujo__nota { margin-top: 8px; font-size: 14px; color: var(--texto-2); }
+
+    /* Señales */
+    .senales .contenedor { display: flex; flex-wrap: wrap; gap: 48px; align-items: flex-start; }
+    .senales__intro { flex: 1 1 360px; min-width: 0; display: flex; flex-direction: column; gap: 16px; }
+    .senales__intro p { font-size: 17px; color: var(--texto-2); }
+    .senales__lista { flex: 1.4 1 480px; min-width: 0; list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 12px; }
+    .senales__lista li { display: flex; gap: 14px; align-items: flex-start; background: var(--fondo); border-radius: 14px; padding: 18px 20px; font-size: 16px; }
+    .senales__lista li::before {
+      content: ""; flex: none; width: 20px; height: 20px; margin-top: 2px;
+      border: 2px solid var(--primario); border-radius: 5px;
+    }
+
+    /* Servicios */
+    .rejilla { display: grid; gap: 20px; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
+    .servicio { background: #fff; border: 1px solid var(--linea); border-radius: 18px; padding: 28px; display: flex; flex-direction: column; gap: 12px; }
+    .servicio__icono { width: 48px; height: 48px; border-radius: 12px; background: var(--arena); display: flex; align-items: center; justify-content: center; }
+    .servicio__icono svg { width: 24px; height: 24px; stroke: var(--primario); }
+    .servicio h3 { font-size: 21px; }
+    .servicio p { font-size: 15.5px; color: var(--texto-2); }
+
+    /* Módulos */
+    .modulos { background: var(--primario); color: #fff; }
+    .modulos .etiqueta { color: var(--acento); }
+    .modulos__rejilla { display: grid; gap: 14px; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); }
+    .modulo { background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.18); border-radius: 16px; padding: 22px; display: flex; flex-direction: column; gap: 6px; }
+    .modulo h3 { font-family: Inter, Arial, sans-serif; font-size: 17px; }
+    .modulo p { font-size: 14.5px; color: var(--crema); }
+    .modulo--acento { background: var(--acento); border-color: var(--acento); color: var(--texto); }
+    .modulo--acento p { color: var(--texto); }
+
+    /* Proceso */
+    .pasos { list-style: none; margin: 0; padding: 0; display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); }
+    .paso { display: flex; flex-direction: column; gap: 10px; padding-top: 18px; border-top: 4px solid; }
+    .paso:nth-child(1) { border-color: #E9C46A; }
+    .paso:nth-child(2) { border-color: #D98E4A; }
+    .paso:nth-child(3) { border-color: #C96C34; }
+    .paso:nth-child(4) { border-color: #A84B22; }
+    .paso:nth-child(5) { border-color: #3B2418; }
+    .paso__num { font-family: var(--titulos); font-size: 15px; font-weight: 700; color: var(--oxido); }
+    .paso h3 { font-family: Inter, Arial, sans-serif; font-size: 18px; }
+    .paso p { font-size: 15px; color: var(--texto-2); }
+
+    /* Por qué */
+    .porque { padding: 0 24px 96px; }
+    .porque .contenedor { display: grid; gap: 20px; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); }
+    .tarjeta-porque { border-radius: 22px; padding: 36px; display: flex; flex-direction: column; gap: 16px; }
+    .tarjeta-porque h2 { font-size: 28px; }
+    .tarjeta-porque ul { margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 10px; font-size: 16px; }
+    .tarjeta-porque--odoo { background: var(--arena); }
+    .tarjeta-porque--tlalli { background: var(--cafe); color: #fff; }
+    .tarjeta-porque--tlalli ul { color: var(--crema); }
+    .tarjeta-porque__cabeza { display: flex; align-items: center; gap: 12px; }
+    .tarjeta-porque__cabeza img { width: 44px; height: 44px; border-radius: 10px; }
+
+    /* Preguntas */
+    .preguntas .contenedor { max-width: 820px; }
+    .faq { display: flex; flex-direction: column; gap: 10px; }
+    .faq details { background: var(--fondo); border-radius: 14px; }
+    .faq summary {
+      list-style: none; cursor: pointer; display: flex; align-items: center; justify-content: space-between;
+      gap: 16px; padding: 20px 22px; font-size: 17px; font-weight: 600;
+    }
+    .faq summary::-webkit-details-marker { display: none; }
+    .faq summary::after { content: "+"; flex: none; font-size: 22px; line-height: 1; color: var(--oxido); }
+    .faq details[open] summary::after { content: "−"; }
+    .faq details p { padding: 0 22px 20px; font-size: 15.5px; line-height: 1.6; color: var(--texto-2); }
+
+    /* Contacto */
+    .contacto__caja {
+      background: var(--primario); color: #fff; border-radius: 28px; padding: 56px 48px;
+      display: flex; flex-wrap: wrap; gap: 40px; align-items: center;
+    }
+    .contacto .etiqueta { color: var(--acento); }
+    .contacto__texto { flex: 1 1 420px; min-width: 0; display: flex; flex-direction: column; gap: 18px; }
+    .contacto h2 { font-size: clamp(34px, 5vw, 44px); line-height: 1.05; letter-spacing: -.01em; }
+    .contacto__texto > p { font-size: 17px; color: var(--crema); max-width: 520px; }
+    .datos { list-style: none; margin: 6px 0 0; padding: 0; display: flex; flex-direction: column; gap: 12px; font-size: 16px; font-weight: 600; }
+    .datos li, .datos a { display: flex; align-items: center; gap: 12px; color: #fff; text-decoration: none; }
+    .datos a:hover { text-decoration: underline; }
+    .datos svg { width: 20px; height: 20px; stroke: var(--acento); flex: none; }
+    .qr { flex: 0 1 260px; background: var(--fondo); color: var(--texto); border-radius: 20px; padding: 24px; display: flex; flex-direction: column; align-items: center; gap: 12px; text-align: center; }
+    .qr img { width: 180px; height: 180px; image-rendering: pixelated; }
+    .qr p { font-size: 14.5px; color: var(--texto-2); }
+
+    /* Pie */
+    .pie { padding: 40px 24px 48px; border-top: 1px solid var(--linea); }
+    .pie .contenedor { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 20px; }
+    .pie__marca { display: flex; align-items: center; gap: 14px; }
+    .pie__marca img { width: 76px; height: auto; }
+    .pie p { font-size: 14px; color: var(--texto-3); }
+    .pie small { font-size: 13px; color: var(--texto-3); }
+
+    /* Botón flotante de WhatsApp */
+    .whatsapp-flotante {
+      position: fixed; right: 20px; bottom: 20px; z-index: 20;
+      width: 56px; height: 56px; border-radius: 50%;
+      background: var(--primario); color: #fff;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 6px 18px rgba(59,36,24,.3);
+    }
+    .whatsapp-flotante:hover { background: var(--cafe); color: #fff; }
+    .whatsapp-flotante svg { width: 26px; height: 26px; }
+
+    @media (max-width: 640px) {
+      .seccion { padding: 72px 20px; }
+      .portada { padding: 48px 20px 72px; }
+      .contacto__caja { padding: 40px 24px; }
+      .menu nav { gap: 2px 16px; font-size: 14px; }
+      .franja { font-size: 14px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+    }
+
+    /* Antes y después */
+    .cambios { display: flex; flex-direction: column; gap: 12px; }
+    .cambio { display: grid; grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr); gap: 16px; align-items: stretch; }
+    .cambio__antes, .cambio__despues { border-radius: 14px; padding: 18px 20px; font-size: 16px; }
+    .cambio__antes { background: #fff; border: 1px solid var(--linea); color: var(--texto-2); }
+    .cambio__despues { background: var(--cafe); color: #fff; font-weight: 600; }
+    .cambio__flecha { display: flex; align-items: center; color: var(--oxido); }
+    .cambio__flecha svg { width: 24px; height: 24px; }
+    .cambios__cabeza { display: grid; grid-template-columns: minmax(0, 1fr) 24px minmax(0, 1fr); gap: 16px; font-size: 14px; font-weight: 700; color: var(--texto-3); }
+    .cambios__cabeza span:last-child { grid-column: 3; }
+    @media (max-width: 640px) {
+      .cambio { grid-template-columns: 1fr; gap: 6px; }
+      .cambio__flecha { justify-content: center; transform: rotate(90deg); }
+      .cambios__cabeza { display: none; }
+      .cambio__antes::before { content: "Antes: "; font-weight: 700; }
+      .cambio__despues::before { content: "Después: "; color: var(--acento); }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Menú -->
+  <header class="menu">
+    <div class="contenedor">
+      <a href="#inicio" class="marca" aria-label="Tlalli Tech, ir al inicio">
+        <img src="img/logo-icono.png" alt="">
+        <span><b>Tlalli</b> <i>Tech</i></span>
+      </a>
+      <nav aria-label="Principal">
+        <a href="#servicios">Servicios</a>
+        <a href="#soluciones">Qué resolvemos</a>
+        <a href="#proceso">Cómo trabajamos</a>
+        <a href="#preguntas">Preguntas</a>
+        <a href="https://wa.me/525642461909?text=Hola%20Tlalli%20Tech%2C%20quiero%20agendar%20un%20diagn%C3%B3stico" class="btn btn--primario" target="_blank" rel="noopener">Agenda tu diagnóstico</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Portada -->
+    <section id="inicio" class="portada">
+      <div class="contenedor">
+        <div class="portada__texto">
+          <p class="etiqueta">Consultoría tecnológica para empresas</p>
+          <h1>Resolvemos los problemas de tu operación con tecnología</h1>
+          <p>Analizamos cómo trabaja tu empresa, automatizamos lo que hoy se hace a mano e implementamos el ERP o el sistema que necesitas para tener el control de tu negocio.</p>
+          <div class="botones">
+            <a href="https://wa.me/525642461909?text=Hola%20Tlalli%20Tech%2C%20quiero%20agendar%20un%20diagn%C3%B3stico" class="btn btn--primario" target="_blank" rel="noopener">
+              <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg>
+              Escríbenos por WhatsApp
+            </a>
+            <a href="#servicios" class="btn btn--borde">Ver cómo te ayudamos</a>
+          </div>
+        </div>
+
+        <div class="flujo" aria-label="Cómo trabajamos un problema">
+          <p class="flujo__titulo">De un problema a un proceso que funciona solo</p>
+          <div class="franja franja--1">Detectamos dónde se pierde tiempo</div>
+          <div class="franja franja--2">Analizamos el proceso completo</div>
+          <div class="franja franja--3">Diseñamos la solución adecuada</div>
+          <div class="franja franja--4">Automatizamos e implementamos</div>
+          <div class="franja franja--5">Capacitamos a tu equipo</div>
+          <div class="franja franja--6">Tu empresa opera con orden</div>
+          <p class="flujo__nota">No vendemos software por vender: primero entendemos el problema y luego elegimos la herramienta.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Señales -->
+    <section class="seccion seccion--arena senales">
+      <div class="contenedor">
+        <div class="senales__intro">
+          <p class="etiqueta">¿Te suena familiar?</p>
+          <h2 class="titulo-seccion">Señales de que tu empresa necesita ordenar sus procesos</h2>
+          <p>Si te identificas con dos o más, podemos ayudarte.</p>
+        </div>
+        <ul class="senales__lista">
+          <li>La información vive en hojas de Excel que nadie sabe cuál es la buena.</li>
+          <li>Tu equipo captura los mismos datos dos o tres veces en sistemas distintos.</li>
+          <li>Hay tareas repetitivas que le quitan horas a la semana a tu gente.</li>
+          <li>Tomas decisiones sin reportes claros de ventas, gastos o inventario.</li>
+          <li>Las ventas y pedidos viven en WhatsApp y nadie les da seguimiento.</li>
+          <li>Todo depende de una o dos personas que saben cómo funciona.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Servicios -->
+    <section id="servicios" class="seccion">
+      <div class="contenedor">
+        <div class="encabezado">
+          <p class="etiqueta">Servicios</p>
+          <h2 class="titulo-seccion">Te acompañamos desde el diagnóstico hasta los resultados</h2>
+          <p>Un solo equipo entiende tu operación, diseña la solución, la pone a funcionar y se queda contigo después.</p>
+        </div>
+        <div class="rejilla">
+          <article class="servicio">
+            <div class="servicio__icono"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg></div>
+            <h3>Consultoría y diagnóstico</h3>
+            <p>Revisamos tus procesos, encontramos dónde se pierde tiempo y dinero, y te entregamos un plan claro de qué hacer y en qué orden.</p>
+          </article>
+          <article class="servicio">
+            <div class="servicio__icono"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-3-6.7"/><path d="M21 4v5h-5"/></svg></div>
+            <h3>Automatización de procesos</h3>
+            <p>Convertimos tareas manuales y repetitivas en flujos automáticos: avisos, reportes, aprobaciones, cobranza y más.</p>
+          </article>
+          <article class="servicio">
+            <div class="servicio__icono"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg></div>
+            <h3>Implementación de ERP</h3>
+            <p>Ventas, inventario, facturación CFDI, contabilidad y recursos humanos en un solo sistema. Somos especialistas en Odoo.</p>
+          </article>
+          <article class="servicio">
+            <div class="servicio__icono"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m16 18 6-6-6-6"/><path d="m8 6-6 6 6 6"/></svg></div>
+            <h3>Sistemas y apps a la medida</h3>
+            <p>Cuando lo que existe no se ajusta a tu negocio, desarrollamos la aplicación web o móvil que necesitas.</p>
+          </article>
+          <article class="servicio">
+            <div class="servicio__icono"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></div>
+            <h3>Integraciones y reportes</h3>
+            <p>Conectamos los sistemas que ya usas para que compartan información, y armamos reportes y tableros para decidir con datos.</p>
+          </article>
+          <article class="servicio">
+            <div class="servicio__icono"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 14v-2a9 9 0 0 1 18 0v2"/><path d="M21 15a2 2 0 0 1-2 2h-1v-5h3z"/><path d="M3 15a2 2 0 0 0 2 2h1v-5H3z"/></svg></div>
+            <h3>Capacitación y soporte</h3>
+            <p>Tu equipo aprende a usar las herramientas con ejemplos de su día a día, y seguimos contigo para dudas y mejoras.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Qué resolvemos -->
+    <section id="soluciones" class="seccion modulos">
+      <div class="contenedor">
+        <div class="encabezado">
+          <p class="etiqueta">Qué resolvemos</p>
+          <h2 class="titulo-seccion">Soluciones para cada área de tu empresa</h2>
+        </div>
+        <div class="modulos__rejilla">
+          <div class="modulo"><h3>Ventas y clientes</h3><p>Seguimiento de prospectos, cotizaciones rápidas y un historial completo de cada cliente.</p></div>
+          <div class="modulo"><h3>Inventario y compras</h3><p>Existencias reales, alertas de reabasto y control de lo que pides contra lo que llega.</p></div>
+          <div class="modulo"><h3>Facturación y cobranza</h3><p>CFDI 4.0 desde el sistema y recordatorios automáticos de pago a tus clientes.</p></div>
+          <div class="modulo"><h3>Contabilidad y finanzas</h3><p>Conciliación bancaria, cuentas por cobrar y pagar, y estados financieros al día.</p></div>
+          <div class="modulo"><h3>Recursos humanos</h3><p>Expedientes, asistencias, vacaciones, nómina y comprobación de gastos.</p></div>
+          <div class="modulo"><h3>Producción y operación</h3><p>Órdenes de trabajo, listas de materiales y el costo real de lo que produces.</p></div>
+          <div class="modulo"><h3>Citas y lealtad</h3><p>Agenda en línea, recordatorios y programas de cliente frecuente para tu negocio.</p></div>
+          <div class="modulo"><h3>Reportes y tableros</h3><p>Los números importantes de tu empresa en una sola pantalla, actualizados.</p></div>
+          <div class="modulo modulo--acento"><h3>¿Tu problema es otro?</h3><p>Cuéntanos qué te quita tiempo y te decimos cómo resolverlo.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Antes y después -->
+    <section class="seccion">
+      <div class="contenedor">
+        <div class="encabezado">
+          <p class="etiqueta">Automatización</p>
+          <h2 class="titulo-seccion">Lo que deja de hacerse a mano</h2>
+          <p>Algunos ejemplos de lo que cambia en el día a día de una empresa.</p>
+        </div>
+        <div class="cambios">
+          <div class="cambios__cabeza" aria-hidden="true"><span>Antes</span><span>Después</span></div>
+          <div class="cambio">
+            <p class="cambio__antes">Capturas el pedido en Excel y luego otra vez para facturarlo.</p>
+            <span class="cambio__flecha" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
+            <p class="cambio__despues">Se captura una vez y la factura sale del mismo pedido.</p>
+          </div>
+          <div class="cambio">
+            <p class="cambio__antes">Alguien revisa cada semana quién debe y manda mensajes uno por uno.</p>
+            <span class="cambio__flecha" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
+            <p class="cambio__despues">El sistema envía los recordatorios de pago por sí solo.</p>
+          </div>
+          <div class="cambio">
+            <p class="cambio__antes">Te enteras de que se acabó un producto cuando el cliente lo pide.</p>
+            <span class="cambio__flecha" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
+            <p class="cambio__despues">Recibes un aviso cuando el inventario llega al mínimo.</p>
+          </div>
+          <div class="cambio">
+            <p class="cambio__antes">El reporte del mes se arma a mano y llega tarde.</p>
+            <span class="cambio__flecha" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
+            <p class="cambio__despues">Consultas tus números cuando quieras, siempre actualizados.</p>
+          </div>
+          <div class="cambio">
+            <p class="cambio__antes">Las citas se agendan por mensaje y a veces se empalman.</p>
+            <span class="cambio__flecha" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
+            <p class="cambio__despues">El cliente elige un horario libre en línea y recibe su confirmación.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Proceso -->
+    <section id="proceso" class="seccion seccion--arena">
+      <div class="contenedor">
+        <div class="encabezado">
+          <p class="etiqueta">Cómo trabajamos</p>
+          <h2 class="titulo-seccion">De la primera llamada a los resultados</h2>
+        </div>
+        <ol class="pasos">
+          <li class="paso"><span class="paso__num">01</span><h3>Diagnóstico</h3><p>Conocemos tus procesos y lo que hoy te quita tiempo o dinero.</p></li>
+          <li class="paso"><span class="paso__num">02</span><h3>Propuesta</h3><p>Solución, alcance, tiempos y costo por escrito.</p></li>
+          <li class="paso"><span class="paso__num">03</span><h3>Implementación</h3><p>Configuramos, desarrollamos y migramos tu información.</p></li>
+          <li class="paso"><span class="paso__num">04</span><h3>Capacitación</h3><p>Cada persona aprende a usar su parte.</p></li>
+          <li class="paso"><span class="paso__num">05</span><h3>Seguimiento</h3><p>Medimos resultados y seguimos mejorando contigo.</p></li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- Por qué -->
+    <section class="porque" style="padding-top: 96px">
+      <div class="contenedor">
+        <div class="tarjeta-porque tarjeta-porque--odoo">
+          <h2>¿Por qué un ERP?</h2>
+          <ul>
+            <li>Toda la información de tu empresa en un solo lugar.</li>
+            <li>Cada área trabaja con los mismos datos, sin capturar dos veces.</li>
+            <li>Sabes en todo momento cuánto vendes, cuánto debes y cuánto tienes.</li>
+            <li>Tu operación deja de depender de una sola persona.</li>
+          </ul>
+        </div>
+        <div class="tarjeta-porque tarjeta-porque--tlalli">
+          <div class="tarjeta-porque__cabeza">
+            <img src="img/logo-icono.png" alt="">
+            <h2>¿Por qué Tlalli Tech?</h2>
+          </div>
+          <ul>
+            <li>Primero entendemos tu problema, luego elegimos la herramienta.</li>
+            <li>Te explicamos todo sin tecnicismos.</li>
+            <li>Implementamos ERP y también desarrollamos a la medida.</li>
+            <li>Costo y tiempos por escrito antes de empezar.</li>
+            <li>Estamos cerca: Zumpango, Estado de México.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Preguntas frecuentes -->
+    <section id="preguntas" class="seccion seccion--arena preguntas">
+      <div class="contenedor">
+        <div class="encabezado">
+          <p class="etiqueta">Preguntas frecuentes</p>
+          <h2 class="titulo-seccion">Lo que más nos preguntan</h2>
+        </div>
+        <div class="faq">
+          <details open>
+            <summary>¿Cuánto cuesta la consultoría?</summary>
+            <p>Depende del tamaño de tu empresa y de lo que haya que resolver. Después del diagnóstico te entregamos una propuesta por escrito con el costo total, sin sorpresas.</p>
+          </details>
+          <details>
+            <summary>¿Mi empresa necesita un ERP o algo más sencillo?</summary>
+            <p>No todas las empresas necesitan un ERP completo. A veces basta con automatizar un proceso o conectar dos sistemas. En el diagnóstico te decimos qué te conviene.</p>
+          </details>
+          <details>
+            <summary>¿Con qué ERP trabajan?</summary>
+            <p>Somos especialistas en Odoo porque se adapta a empresas de cualquier tamaño y crece módulo por módulo. Si tu caso pide otra herramienta, te lo decimos.</p>
+          </details>
+          <details>
+            <summary>Ya tengo un sistema, ¿pueden trabajar con él?</summary>
+            <p>Sí. Revisamos lo que ya usas y vemos si conviene mejorarlo, conectarlo con otras herramientas o migrar a algo nuevo.</p>
+          </details>
+          <details>
+            <summary>¿Cuánto tiempo tarda un proyecto?</summary>
+            <p>Lo define el alcance. En la propuesta va un calendario por etapas, y puedes empezar por lo más urgente para ver resultados pronto.</p>
+          </details>
+          <details>
+            <summary>¿Qué pasa cuando termina la implementación?</summary>
+            <p>Seguimos contigo con soporte para resolver dudas, corregir errores y agregar mejoras conforme crece tu operación.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contacto -->
+    <section id="contacto" class="seccion contacto">
+      <div class="contenedor contacto__caja">
+        <div class="contacto__texto">
+          <p class="etiqueta">El primer paso</p>
+          <h2>Agenda tu diagnóstico</h2>
+          <p>Platícanos qué te quita tiempo en tu empresa y te decimos cómo resolverlo, en qué orden y cuánto cuesta.</p>
+          <ul class="datos">
+            <li><a href="https://wa.me/525642461909?text=Hola%20Tlalli%20Tech%2C%20quiero%20agendar%20un%20diagn%C3%B3stico" target="_blank" rel="noopener"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg>56 4246 1909</a></li>
+            <li><a href="mailto:contacto@tuempresa.com"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>contacto@tuempresa.com</a></li>
+            <li><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>Zumpango, Estado de México</li>
+          </ul>
+          <div style="margin-top: 8px">
+            <a href="https://wa.me/525642461909?text=Hola%20Tlalli%20Tech%2C%20quiero%20agendar%20un%20diagn%C3%B3stico" class="btn btn--acento" target="_blank" rel="noopener">Escríbenos por WhatsApp</a>
+          </div>
+        </div>
+        <div class="qr">
+          <img src="img/qr-whatsapp.png" alt="Código QR para escribir por WhatsApp al 56 4246 1909">
+          <p>Escanéalo con tu celular y escríbenos directo.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Pie -->
+  <footer class="pie">
+    <div class="contenedor">
+      <div class="pie__marca">
+        <img src="img/logo-completo.png" alt="Tlalli Tech, tecnología con raíces">
+        <p>Consultoría tecnológica, automatización y ERP.</p>
+      </div>
+      <small>© <span id="anio">2026</span> Tlalli Tech · Odoo® es una marca registrada de Odoo S.A.</small>
+    </div>
+  </footer>
+
+  <!-- Botón flotante de WhatsApp -->
+  <a href="https://wa.me/525642461909?text=Hola%20Tlalli%20Tech%2C%20quiero%20agendar%20un%20diagn%C3%B3stico" class="whatsapp-flotante" target="_blank" rel="noopener" aria-label="Escríbenos por WhatsApp">
+    <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg>
+  </a>
+
+  <script>
+    document.getElementById('anio').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
